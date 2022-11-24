@@ -1627,8 +1627,8 @@ func (s *BodyPostureResponse) SetBody(v *BodyPostureResponseBody) *BodyPostureRe
 }
 
 type CompareFaceRequest struct {
-	ImageDataA            []byte   `json:"ImageDataA,omitempty" xml:"ImageDataA,omitempty"`
-	ImageDataB            []byte   `json:"ImageDataB,omitempty" xml:"ImageDataB,omitempty"`
+	ImageDataA            *string  `json:"ImageDataA,omitempty" xml:"ImageDataA,omitempty"`
+	ImageDataB            *string  `json:"ImageDataB,omitempty" xml:"ImageDataB,omitempty"`
 	ImageURLA             *string  `json:"ImageURLA,omitempty" xml:"ImageURLA,omitempty"`
 	ImageURLB             *string  `json:"ImageURLB,omitempty" xml:"ImageURLB,omitempty"`
 	QualityScoreThreshold *float32 `json:"QualityScoreThreshold,omitempty" xml:"QualityScoreThreshold,omitempty"`
@@ -1642,12 +1642,12 @@ func (s CompareFaceRequest) GoString() string {
 	return s.String()
 }
 
-func (s *CompareFaceRequest) SetImageDataA(v []byte) *CompareFaceRequest {
+func (s *CompareFaceRequest) SetImageDataA(v *string) *CompareFaceRequest {
 	s.ImageDataA = v
 	return s
 }
 
-func (s *CompareFaceRequest) SetImageDataB(v []byte) *CompareFaceRequest {
+func (s *CompareFaceRequest) SetImageDataB(v *string) *CompareFaceRequest {
 	s.ImageDataB = v
 	return s
 }
